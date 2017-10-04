@@ -1,0 +1,27 @@
+body, html, #root, #root > div{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.mdc-list{
+    width: 60%;
+    margin: auto;
+}
+
+.surface{
+    cursor: pointer;
+}
+
+
+header.mdc-toolbar{
+    background-image: url('https://i.imgur.com/1RGE7BX.jpg');
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: cover;
+}
+.centered{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
