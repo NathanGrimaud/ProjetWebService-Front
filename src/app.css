@@ -2,6 +2,7 @@ body, html, #root, #root > div{
     height: 100%;
     width: 100%;
     margin: 0;
+    font-family: 'Roboto'
 }
 
 .mdc-list{
@@ -13,7 +14,53 @@ body, html, #root, #root > div{
     cursor: pointer;
 }
 
-
+.messages{
+    display: flex;
+    flex-direction: column;
+}
+.message>i{
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 30px;
+}
+.message{
+    display: flex;
+    width: 50%;
+    height: 50px;
+    padding: 15px;
+    align-items: center;
+}
+.sender{
+    flex-direction: row;
+}
+.receiver{
+    flex-direction: row-reverse;
+}
+.user-message{
+    height: 100%;
+    width: 100%;
+    vertical-align: middle;
+    line-height: 42px;
+    padding-right: 20px;
+    border-radius: 10%;
+    border-radius: 5px; 
+}
+.sender > .user-message{
+    background-color: #B71C1C;
+    padding-left: 20px;
+    text-align: left;
+}
+.sender > .user-message::before {
+   /* content: "◂"; */
+}
+.receiver > .user-message{
+    background-color: #880E4F;
+    padding-right: 20px;
+    text-align: right;
+}
+.receiver > .user-message:after {
+    /* content: "►"; */
+}
 header.mdc-toolbar{
     background-image: url('https://i.imgur.com/1RGE7BX.jpg');
     background-repeat: no-repeat;

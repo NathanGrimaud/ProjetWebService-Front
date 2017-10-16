@@ -11,10 +11,11 @@ import Users from './components/userList'
 import Header from './components/header'
 import Footer from './components/footer'
 import Imports from './imports'
-import Chat from './components/chat'
-import {Subject}from 'rxjs'
+import Chat from './components/messages'
 import './app.css'
-const USER_API = 'https://jsonplaceholder.typicode.com/users'
+// const USER_API = 'http://api.hurrycane.fr:9000/user'
+
+
 const CHAT_API = 'http://api.icndb.com/jokes/random' 
 
 
@@ -23,6 +24,7 @@ function main(sources) {
     const match$ = sources.router.define({
         '/': Home,
         '/users':sources => Users(sources),
+        '/chat' : sources => Chat(sources),
     })
 
     const links$ = sources
@@ -41,24 +43,17 @@ function main(sources) {
         }))
     })
 
-    const userService$ = xs.of({
-        url: USER_API,
-        category: 'users',
-    })
 
-
-
-    const services$ =  xs.merge(userService$)
-    
-    const child$ =  page$.map(c => c.DOM).flatten()
+    const httpServices$ = page$.map(c => c.HTTP || xs.empty()).flatten()
+    const children$ =  page$.map(c =>c.DOM || xs.empty()).flatten()
     const header$ = Header(sources).DOM
     return {
-        DOM: xs.combine(header$,child$, Footer, Imports)
+        DOM: xs.combine(header$,children$, Footer, Imports)
             .map(([header,page,footer,imports]) =>
                 <div>
                     {header}
                     <main className="mdc-toolbar-fixed-adjust wrap">
-                      {page}
+                        {page}
                     </main>
                     {footer}
                     {imports}
@@ -67,7 +62,7 @@ function main(sources) {
         router: xs.merge(
             links$.map(route => route)
         ),
-        HTTP: services$,
+        HTTP: httpServices$ ,
     }
 }
 

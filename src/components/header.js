@@ -8,7 +8,7 @@ import { MDCToolbar } from '@material/toolbar'
 export default function (sources) {
     setTimeout(() => {
         let toolbar = MDCToolbar.attachTo(document.querySelector('.mdc-toolbar'))
-        toolbar.fixedAdjustElement = document.querySelector('.mdc-toolbar-fixed-adjust');
+        toolbar.fixedAdjustElement = document.querySelector('.mdc-toolbar-fixed-adjust')
         let buttons = document.querySelectorAll('.button-ripple')
         Array.from(buttons).forEach((surface) => new MDCRipple(surface))
     }, 500)
@@ -18,16 +18,15 @@ export default function (sources) {
                 <div className="mdc-toolbar__row">
 
                 <section className="mdc-toolbar__section mdc-toolbar__section--align-start">
-                    <a className="mdc-button" attrs-data-link="/">
-                        HOME
-                    </a>
-                    <span className="mdc-toolbar__title" attrs-style="font-size: 2.125rem;"> Thoune</span>
+  
+                    <span attrs-data-link="/" className="mdc-toolbar__title" attrs-style="font-size: 2.125rem;"> 
+                    Thoune
+                    </span>
                 </section>
 
 
                 <section className="mdc-toolbar__section mdc-toolbar__section--align-end">
                     <a className="mdc-button" attrs-data-link="/users">
-                        <i className="material-icons">account_circle</i>
                         USERS
                     </a>
                 </section>                
