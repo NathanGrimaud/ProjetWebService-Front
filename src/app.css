@@ -46,17 +46,20 @@ body, html, #root, #root > div{
     border-radius: 5px; 
 }
 .sender > .user-message{
-    background-color: #B71C1C;
+    background-color: rgba(183, 28, 28, .8);
     padding-left: 20px;
     text-align: left;
+    color: #F5F5F5;
 }
 .sender > .user-message::before {
    /* content: "◂"; */
 }
 .receiver > .user-message{
-    background-color: #880E4F;
+    background-color: rgba(136, 14, 79, .8);
     padding-right: 20px;
     text-align: right;
+    color: #F5F5F5;
+    
 }
 .receiver > .user-message:after {
     /* content: "►"; */

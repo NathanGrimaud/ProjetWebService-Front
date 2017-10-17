@@ -3,8 +3,8 @@ import { MDCRipple } from '@material/ripple'
 import xs from 'xstream'
 
 export default function (sources) {
-     const USER_API = 'http://api.hurrycane.fr:9000/user'
-    // const USER_API = 'https://jsonplaceholder.typicode.com/users'
+    // const USER_API = 'http://api.hurrycane.fr:9000/user'
+     const USER_API = 'https://jsonplaceholder.typicode.com/users'
     const request$ =  xs.of({
         url: USER_API,
         category: 'users',
@@ -35,7 +35,7 @@ export default function (sources) {
                 const childs = users.map((user) =>
                     <a attrs-data-link={`/chat/${user.id}`}  id={user.id} className="mdc-list-item surface">
                         <i className="material-icons mdc-list-item__start-detail" >account_circle</i>
-                        {user.nom} {user.prenom}
+                        {user.name}
                     </a>)
                 return (
                     <div className="centered">
