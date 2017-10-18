@@ -23,13 +23,6 @@ export default function (sources) {
                     Thoune
                     </span>
                 </section>
-
-
-                <section className="mdc-toolbar__section mdc-toolbar__section--align-end">
-                    <a className="mdc-button" attrs-data-link="/users">
-                        USERS
-                    </a>
-                </section>                
                 </div>
             </header>
         )

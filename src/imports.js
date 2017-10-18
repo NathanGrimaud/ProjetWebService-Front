@@ -7,6 +7,8 @@ import '../node_modules/@material/dialog/dist/mdc.dialog.min.css'
 const imports = xs.of(
 <div>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.css"/>
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.js"></script>
 </div>
 )
 export default imports

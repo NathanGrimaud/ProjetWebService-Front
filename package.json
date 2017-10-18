@@ -21,6 +21,7 @@
     "babel-preset-es2015": "^6.24.1",
     "cyclic-router": "^5.1.3",
     "material-design-icons": "^3.0.1",
+    "moment": "^2.19.1",
     "neutrino-middleware-sass": "^0.0.1",
     "neutrino-middleware-style-loader": "^7.1.2",
     "neutrino-preset-sass": "^1.0.3",
@@ -40,7 +41,7 @@
     "webpack": "^3.7.1"
   },
   "scripts": {
-    "start":"node index.js",
+    "start": "node index.js",
     "watch": "neutrino start",
     "build": "neutrino build"
   }

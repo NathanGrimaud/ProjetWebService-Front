@@ -12,6 +12,9 @@ import Header from './components/header'
 import Footer from './components/footer'
 import Imports from './imports'
 import Chat from './components/messages'
+import Intents from './components/intent'
+import IntentForm from './components/intentForm'
+
 import './app.css'
 // const USER_API = 'http://api.hurrycane.fr:9000/user'
 
@@ -23,8 +26,10 @@ function main(sources) {
 
     const match$ = sources.router.define({
         '/': Home,
-        '/users':sources => Users(sources),
-        '/chat' : sources => Chat(sources),
+        '/chat':sources => Users(sources),
+        '/chat/:id' :  id => sources => Chat(sources,{id}),
+        '/intents': sources => Intents(sources),
+        '/intents/new': sources => IntentForm(sources),
     })
 
     const links$ = sources
@@ -50,7 +55,7 @@ function main(sources) {
     return {
         DOM: xs.combine(header$,children$, Footer, Imports)
             .map(([header,page,footer,imports]) =>
-                <div>
+                <div>                
                     {header}
                     <main className="mdc-toolbar-fixed-adjust wrap">
                         {page}

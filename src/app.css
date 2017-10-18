@@ -1,10 +1,15 @@
-body, html, #root, #root > div{
+html, #root, #root > div{
     height: 100%;
     width: 100%;
     margin: 0;
     font-family: 'Roboto'
 }
-
+main{
+    height: 100%;
+}
+body{
+    height: 65%;
+}
 .mdc-list{
     width: 60%;
     margin: auto;
@@ -26,14 +31,13 @@ body, html, #root, #root > div{
 .message{
     display: flex;
     width: 50%;
-    height: 50px;
     padding: 15px;
     align-items: center;
 }
-.sender{
+.user{
     flex-direction: row;
 }
-.receiver{
+.bot{
     flex-direction: row-reverse;
 }
 .user-message{
@@ -45,23 +49,24 @@ body, html, #root, #root > div{
     border-radius: 10%;
     border-radius: 5px; 
 }
-.sender > .user-message{
-    background-color: rgba(183, 28, 28, .8);
+.user > .user-message{
+    background-color: #EEEEEE;
     padding-left: 20px;
     text-align: left;
-    color: #F5F5F5;
+    color: #212121;
+    margin-right: 20%;
 }
-.sender > .user-message::before {
+.user > .user-message::before {
    /* content: "◂"; */
 }
-.receiver > .user-message{
+.bot > .user-message{
     background-color: rgba(136, 14, 79, .8);
     padding-right: 20px;
     text-align: right;
     color: #F5F5F5;
-    
+    margin-left: 20%;
 }
-.receiver > .user-message:after {
+.bot > .user-message:after {
     /* content: "►"; */
 }
 header.mdc-toolbar{
@@ -71,7 +76,53 @@ header.mdc-toolbar{
     background-size: cover;
 }
 .centered{
+    height: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+
+.menu-grid{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    justify-content: center;
+}
+.menu-card{
+    cursor: pointer;
+    height: 160px;
+    display: flex;
+    margin: 10px;
+    background-color: #EEEEEE;
+    width: 350px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+  
+.menu-card:hover {
+box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.mdc-toolbar__title{
+    cursor: pointer;
+}
+.menu-title{
+    align-self: flex-end;
+    width: 100%;
+    padding: 10px;
+    color:#F5F5F5;
+    background-color: rgba(33,33,33,.3);
+}
+
+.users-card{
+    background-image: url("/static/icons/users.png");
+    background-position: right top;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.intents-card{
+    background-image: url("/static/icons/light-bulb.png");
+    background-position: right top;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
