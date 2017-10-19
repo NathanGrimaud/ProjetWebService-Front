@@ -8,7 +8,12 @@ export default function(sources){
 
     const post$ = xs.combine(click$,change$)
         .map((payload) => {
-            if(payload[1] === true){
+            if(payload[1] === true && payload[0] !== ""){
+                // ugly but cyclic router does not offer
+                // a redirect 
+                setTimeout(()=>{
+                    location.pathname = "/intents"
+                },500)
                 return {
                     url: URL , // GET method by default
                     category: 'intent',
@@ -19,19 +24,19 @@ export default function(sources){
         }
     )
 
+
     return {
         DOM: xs.of(
             <div className="centered">
             <h1 className="mdc-typography--display3">New intents</h1>
-                <button className="mdc-button add">
-                    Add a new intent
-                </button>
-                <div className="mdc-textfield"> 
-                    <input type="text" id="intent" className="mdc-textfield__input"/>
-                    <label className="mdc-textfield__label" for="my-textfield">Hint text</label>
-                </div>
+            <div className="mdc-textfield"> 
+                <input type="text" id="intent" className="mdc-textfield__input"/>
+            </div>
+            <button className="mdc-button add">
+                SEND
+            </button>
             </div>
         ),
-        HTTP : post$
+        HTTP : post$ ,
     }
 }

@@ -27,7 +27,7 @@ export default function(sources){
             <div className="messages centered">
                 <h1 className="mdc-typography--display3">Intents</h1>
             
-                <ul className="mdc-list">
+                <ul className="mdc-list intent-list">
                     {messagesDom}
                 </ul>
 

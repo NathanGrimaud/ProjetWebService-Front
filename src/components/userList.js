@@ -35,7 +35,7 @@ export default function (sources) {
                 const childs = users.map((user) =>
                     <a attrs-data-link={`/chat/${user.userid}`}  id={user.id} className="mdc-list-item surface">
                         <i className="material-icons mdc-list-item__start-detail" >account_circle</i>
-                        {user.nom} {user.prenom} 
+                        {user.prenom} {user.nom} 
                     </a>)
                 return (
                     <div className="centered">
