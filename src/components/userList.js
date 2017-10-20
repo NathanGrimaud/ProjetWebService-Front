@@ -3,7 +3,7 @@ import { MDCRipple } from '@material/ripple'
 import xs from 'xstream'
 
 export default function (sources) {
-    const USER_API = 'http://api.hurrycane.fr:9000/user'
+    const USER_API = 'https://api.hurrycane.fr:9000/user'
     // const USER_API = 'https://jsonplaceholder.typicode.com/users'
     const request$ =  xs.of({
         url: USER_API,
