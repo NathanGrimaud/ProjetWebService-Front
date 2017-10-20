@@ -7,7 +7,7 @@ export default function(sources, props){
     const {id} = props
 
     const request$ = xs.of({
-        url: `http://api.hurrycane.fr:9000/message`, // GET method by default
+        url: `https://api.hurrycane.fr:9000/message`, // GET method by default
         category: 'messages',
     })
 
