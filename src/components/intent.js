@@ -5,7 +5,7 @@ import {html} from 'snabbdom-jsx'
 export default function(sources){
 
     const request$ = xs.of({
-        url: 'http://api.hurrycane.fr:9000/intent', // GET method by default
+        url: 'https://api.hurrycane.fr:9000/intent', // GET method by default
         category: 'intent',
     })
 
