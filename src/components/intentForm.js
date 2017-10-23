@@ -4,7 +4,7 @@ export default function(sources){
 
     const click$ = sources.DOM.select('#intent').events('change').map(e => e.target.value).startWith('')
     const change$ = sources.DOM.select('.add').events('click').map(e => e.returnValue).startWith(false)
-    const URL = 'http://api.hurrycane.fr:9000/intent'
+    const URL = 'https://api.hurrycane.fr:9000/intent'
 
     const post$ = xs.combine(click$,change$)
         .map((payload) => {
