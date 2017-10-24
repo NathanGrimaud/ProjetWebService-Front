@@ -1,10 +1,9 @@
 import { html } from 'snabbdom-jsx'
 import { MDCRipple } from '@material/ripple'
 import xs from 'xstream'
-
+import {USER_URL} from '../constants'
 export default function (sources) {
-    const USER_API = 'https://api.hurrycane.fr:9000/user'
-    // const USER_API = 'https://jsonplaceholder.typicode.com/users'
+    const USER_API = USER_URL
     const request$ =  xs.of({
         url: USER_API,
         category: 'users',
@@ -17,9 +16,6 @@ export default function (sources) {
             setTimeout(() => {
                 const surfaces = document.querySelectorAll('.surface')
                 Array.from(surfaces).forEach((surface) => {
-                    surface.addEventListener('click',()=>{
-
-                    })
                     const ripple = new MDCRipple(surface)
                 })
             }, 200)

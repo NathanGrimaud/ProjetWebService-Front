@@ -2,12 +2,13 @@ import xs from 'xstream'
 import {last} from 'ramda'
 import {html} from 'snabbdom-jsx'
 import moment from 'moment'
+import {MESSAGES_URL} from '../constants'
 export default function(sources, props){
 
     const {id} = props
 
     const request$ = xs.of({
-        url: `https://api.hurrycane.fr:9000/message`, // GET method by default
+        url: MESSAGES_URL, // GET method by default
         category: 'messages',
     })
 

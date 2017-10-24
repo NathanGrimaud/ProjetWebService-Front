@@ -1,11 +1,11 @@
 import xs from 'xstream'
 import {last} from 'ramda'
 import {html} from 'snabbdom-jsx'
-
+import {INTENT_URL} from '../constants'
 export default function(sources){
 
     const request$ = xs.of({
-        url: 'https://api.hurrycane.fr:9000/intent', // GET method by default
+        url: INTENT_URL, // GET method by default
         category: 'intent',
     })
 
