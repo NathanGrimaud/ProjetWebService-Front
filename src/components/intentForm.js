@@ -14,7 +14,7 @@ export default function(sources){
                 // ugly but cyclic router does not offer
                 // a redirect 
                 setTimeout(()=>{
-                    location.pathname = "/intents"
+                    location.pathname = "/"
                 },500)
                 return {
                     url: URL , // GET method by default
