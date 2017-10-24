@@ -44,7 +44,6 @@ body{
     overflow: auto;
 }
 .user-message{
-    height: 100%;
     width: 100%;
     vertical-align: middle;
     line-height: 42px;
@@ -79,7 +78,6 @@ header.mdc-toolbar{
     background-size: cover;
 }
 .centered{
-    height: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;

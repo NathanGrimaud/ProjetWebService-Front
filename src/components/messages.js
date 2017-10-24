@@ -28,7 +28,7 @@ export default function(sources, props){
                 return -1
             return 1
         })
-        .map(message =>             <div className={`message ${ message.message.content === message.message.messageid ? 'user':'bot' }`}>
+        .map(message => <div className={`message ${ message.types === 'Request' ? 'user':'bot' }`}>
                 <i className="material-icons">account_circle</i>
                 <div className="user-message">{message.message.content}</div>
             </div>
